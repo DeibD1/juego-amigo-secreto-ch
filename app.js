@@ -7,6 +7,7 @@ function asignarTextoElemento(elemento, texto) {
     elementoHTML.innerHTML = texto;
     return;
 }
+//Funcion para agregar un amigo a nuestro array
 function agregarAmigo() {
     //El .value es muy importante para obtener el valor 
     // que esta entrando en el input ya que solo necesitamos eso
@@ -49,15 +50,22 @@ function mostrarListaAmigos() {
         lista.innerHTML = nombre;
     });
 }
+//Funcion para generar un numero aleatorio o en este caso un amigo aleatorio
 function generarIndiceAleatorio(){
     return amigoRandom = Math.floor(Math.random()*nombresAmigosSecretos.length)+1;
 }
+//funcion para sortear un amigo y retornar cual fue el elegido
 function sortearAmigo(){
+    //comprobamos que la lista no este vacia
     if(nombresAmigosSecretos.length === 0){
         asignarTextoElemento('#resultado',"Lista vacia");
     }else{
-        nombresAmigosSecretos.indexOf(generarIndiceAleatorio());
-        asignarTextoElemento('#resultado',`Tu amigo secreto es: ${amigoRandom}`);
+        //Al generar un numero aleatorio este lo debe asociar con uno de los nombres de la lista, por ende, procedemos a retornarlo
+        let indice = generarIndiceAleatorio();
+        let amigo = nombresAmigosSecretos[indice];
+        asignarTextoElemento('#resultado',`Tu amigo secreto es: ${amigo}`);
+        //Deshabilitamos el boton para que solo se pueda sortear una vez el amigo
+        document.querySelector('#sorteo').setAttribute('disabled', true);
     }
     return;
 }
