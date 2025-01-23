@@ -2,6 +2,11 @@
 //Lista de los nombres de los amigos
 let nombresAmigosSecretos = [];
 //Esta funcion agrega los amigos a la lista designada anteriormente
+function asignarTextoElemento(elemento, texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+    return;
+}
 function agregarAmigo() {
     //El .value es muy importante para obtener el valor 
     // que esta entrando en el input ya que solo necesitamos eso
@@ -43,4 +48,16 @@ function mostrarListaAmigos() {
         document.querySelector('#listaAmigos').appendChild(lista);
         lista.innerHTML = nombre;
     });
+}
+function generarIndiceAleatorio(){
+    return amigoRandom = Math.floor(Math.random()*nombresAmigosSecretos.length)+1;
+}
+function sortearAmigo(){
+    if(nombresAmigosSecretos.length === 0){
+        asignarTextoElemento('#resultado',"Lista vacia");
+    }else{
+        nombresAmigosSecretos.indexOf(generarIndiceAleatorio());
+        asignarTextoElemento('#resultado',`Tu amigo secreto es: ${amigoRandom}`);
+    }
+    return;
 }
