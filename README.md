@@ -13,4 +13,4 @@ Una aplicación web simple para gestionar un sorteo de **amigo secreto**. Este p
 - **JavaScript**: Para la lógica del sorteo y la manipulación del DOM.
 
 ## Capturas de pantalla 📸
-- 
+<img src="https://github.com/DeibD1/juego-amigo-secreto-ch/blob/b7e079f1b9d7873a14f5427949238693d710ca5a/imagenes/imagen1.png">
